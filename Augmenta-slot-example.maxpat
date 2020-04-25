@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 995.0, 85.0, 580.0, 920.0 ],
+		"rect" : [ 995.0, 85.0, 580.0, 913.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,12 +39,37 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-12",
-					"maxclass" : "newobj",
+					"id" : "obj-15",
+					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 494.0, 286.0, 32.0, 22.0 ],
-					"text" : "print"
+					"patching_rect" : [ 18.0, 17.0, 558.0, 20.0 ],
+					"text" : "Slot Manager example Patch, see code for explanation"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-13",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 18.0, 269.0, 150.0, 48.0 ],
+					"presentation_linecount" : 3,
+					"text" : "Bang will output SlotArray\n-1 if free\npid if occupied"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-12",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 18.0, 236.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -54,7 +79,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 18.0, 252.0, 150.0, 20.0 ],
+					"patching_rect" : [ 18.0, 350.0, 150.0, 20.0 ],
 					"text" : "Empty slot Queue"
 				}
 
@@ -66,7 +91,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 18.0, 222.0, 98.0, 22.0 ],
+					"patching_rect" : [ 18.0, 320.0, 98.0, 22.0 ],
 					"text" : "emptySlotQueue"
 				}
 
@@ -86,11 +111,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-49",
+					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 18.0, 424.0, 150.0, 20.0 ],
-					"text" : "Set protocol V1 or V2+"
+					"patching_rect" : [ 18.0, 522.0, 150.0, 48.0 ],
+					"text" : "Set protocol V1 or V2+ (is global between instances)\nDefault is V2"
 				}
 
 			}
@@ -101,7 +127,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 18.0, 398.0, 119.0, 22.0 ],
+					"patching_rect" : [ 18.0, 496.0, 119.0, 22.0 ],
 					"text" : "setProtocolVersion 2"
 				}
 
@@ -113,7 +139,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 18.0, 368.0, 119.0, 22.0 ],
+					"patching_rect" : [ 18.0, 466.0, 119.0, 22.0 ],
 					"text" : "setProtocolVersion 1"
 				}
 
@@ -137,7 +163,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 18.0, 325.0, 150.0, 34.0 ],
+					"patching_rect" : [ 18.0, 423.0, 150.0, 34.0 ],
 					"text" : "Change number of slot (default is 10)"
 				}
 
@@ -233,7 +259,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 18.0, 291.0, 79.0, 22.0 ],
+					"patching_rect" : [ 18.0, 389.0, 79.0, 22.0 ],
 					"text" : "setSlotSize 8"
 				}
 
@@ -357,6 +383,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-6", 0 ],
+					"source" : [ "obj-12", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-10", 0 ],
 					"source" : [ "obj-16", 0 ]
 				}
@@ -427,13 +460,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-12", 0 ],
-					"source" : [ "obj-6", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-19", 0 ],
 					"source" : [ "obj-6", 0 ]
 				}
@@ -449,7 +475,7 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "slotManager.js",
-				"bootpath" : "~/code/maxmsp/slotManager",
+				"bootpath" : "~/code/maxmsp/MaxMsp-SlotManager",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
 				"implicit" : 1

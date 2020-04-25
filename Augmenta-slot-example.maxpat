@@ -56,7 +56,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 18.0, 269.0, 150.0, 48.0 ],
-					"presentation_linecount" : 3,
 					"text" : "Bang will output SlotArray\n-1 if free\npid if occupied"
 				}
 

@@ -24,7 +24,6 @@ var activeSlot;
 
 // Global vars
 g = new Global("slotManagerGlobal");
-g.protocolVersion = 2; // default to protocol V2
 
 // This code works if global
 
@@ -85,6 +84,12 @@ function msg_int(_int) {
 
 function bang()
 {
+	outlet(1,g.slotArray);
+}
+
+function loadbang()
+{
+	//post("loadbang\n");
 	outlet(1,g.slotArray);
 }
 
@@ -163,7 +168,6 @@ function init()
 {
 	post("Initializing slot queue...\n");
 	activeSlot = 0;
-	outlet(1,g.slotArray);
 	
 	if(g.protocolVersion == 1)
 	{
@@ -178,7 +182,11 @@ function init()
 		centroidX = 4;
 		centroidY = 5;
 	} else {
-		error("protocolVersion needs to be set !\n");
+		g.protocolVersion = 2; // default to protocol V2
+		pid = 1;
+		oid = 2;
+		centroidX = 4;
+		centroidY = 5;
 	}	
 }
 
